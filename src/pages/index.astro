@@ -1,0 +1,66 @@
+---
+const title = "MicPricing.com";
+const description = "Trouvez les meilleurs prix pour vos microphones préférés";
+
+const microphones = [
+  { name: "Shure SM58", url: "https://www.amazon.com/dp/B0000AQRSU" },
+  { name: "Audio-Technica AT2020", url: "https://www.amazon.com/dp/B0006H92QK" },
+  { name: "Blue Yeti USB", url: "https://www.amazon.com/dp/B00N1YPXW2" },
+  { name: "Rode NT1-A", url: "https://www.amazon.com/dp/B002QAUOKS" },
+  { name: "Sennheiser e835", url: "https://www.amazon.com/dp/B000LRH2ZI" }
+];
+---
+
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title}</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 { color: #2c3e50; margin-bottom: 10px; }
+    p { margin-bottom: 30px; }
+    .mic-list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+    .mic-link {
+      background-color: #3498db;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+    .mic-link:hover {
+      background-color: #2980b9;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>{title}</h1>
+    <p>{description}</p>
+  </header>
+  
+  <main>
+    <div class="mic-list">
+      {microphones.map(mic => (
+        <a href={mic.url} class="mic-link" target="_blank" rel="noopener noreferrer">
+          {mic.name}
+        </a>
+      ))}
+    </div>
+  </main>
+</body>
+</html>

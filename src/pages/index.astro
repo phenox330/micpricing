@@ -21,6 +21,10 @@ const microphones = [
       font-family: Arial, sans-serif;
       line-height: 1.6;
       color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
       max-width: 800px;
       margin: 0 auto;
       padding: 20px;
@@ -45,22 +49,50 @@ const microphones = [
     .mic-link:hover {
       background-color: #2980b9;
     }
+    nav {
+      background-color: #2c3e50;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      color: white;
+      font-size: 1.5em;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .nav-link {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .nav-link:hover {
+      color: #3498db;
+    }
   </style>
 </head>
 <body>
-  <header>
-    <h1>{title}</h1>
-    <p>{description}</p>
-  </header>
-  
-  <main>
-    <div class="mic-list">
-      {microphones.map(mic => (
-        <a href={mic.url} class="mic-link" target="_blank" rel="noopener noreferrer">
-          {mic.name}
-        </a>
-      ))}
-    </div>
-  </main>
+  <nav>
+    <a href="/" class="logo">{title}</a>
+    <a href="/blog" class="nav-link">Blog</a>
+  </nav>
+
+  <div class="container">
+    <header>
+      <h1>{title}</h1>
+      <p>{description}</p>
+    </header>
+    
+    <main>
+      <div class="mic-list">
+        {microphones.map(mic => (
+          <a href={mic.url} class="mic-link" target="_blank" rel="noopener noreferrer">
+            {mic.name}
+          </a>
+        ))}
+      </div>
+    </main>
+  </div>
 </body>
 </html>
